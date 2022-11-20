@@ -40,6 +40,11 @@ def pad_sents(sents, pad_token):
     sents_padded = []
 
     ### START CODE HERE (~6 Lines)
+    max_length = max([len(sentence) for sentence in sents])
+    sents_padded = list(map(lambda sentence: sentence + (max_length - len(sentence)) * [pad_token], sents))
+
+    assert max(list(map(len, sents_padded))) == max_length
+    assert min(list(map(len, sents_padded))) == max_length
     ### END CODE HERE
 
     return sents_padded
