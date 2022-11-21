@@ -63,7 +63,7 @@ class graded():
 
 class timeout_func:
   def __init__(self, maxSeconds):
-    self.maxSeconds = maxSeconds
+    self.maxSeconds = 300
 
   def __call__(self, func):
     @wraps(func)
